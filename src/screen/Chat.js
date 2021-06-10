@@ -17,7 +17,6 @@ import {
   ListItem,
   Left,
   Body,
-  // Right,
   Thumbnail,
   Text,
   Button,

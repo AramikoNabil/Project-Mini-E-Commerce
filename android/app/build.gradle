@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.borneo"
+        applicationId "com.borneoshop"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -150,6 +150,15 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+
+        release { //Tambahkan Ini
+            if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) { //Tambahkan Ini
+                storeFile file(MYAPP_UPLOAD_STORE_FILE) //Tambahkan Ini
+                storePassword MYAPP_UPLOAD_STORE_PASSWORD //Tambahkan Ini
+                keyAlias MYAPP_UPLOAD_KEY_ALIAS //Tambahkan Ini
+                keyPassword MYAPP_UPLOAD_KEY_PASSWORD //Tambahkan Ini
+            } //Tambahkan Ini
+        } //Tambahkan Ini
     }
     buildTypes {
         debug {
@@ -158,7 +167,8 @@ android {
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
+            // signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release //Tambahkan Ini
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }

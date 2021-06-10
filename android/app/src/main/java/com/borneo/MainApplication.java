@@ -1,4 +1,4 @@
-package com.borneo;
+package com.borneoshop;
 
 import android.app.Application;
 import android.content.Context;

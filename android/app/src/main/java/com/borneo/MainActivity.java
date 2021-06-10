@@ -1,4 +1,4 @@
-package com.borneo;
+package com.borneoshop;
 
 import com.facebook.react.ReactActivity;
 
